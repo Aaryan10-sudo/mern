@@ -10,8 +10,6 @@
 //     console.log(false)
 // }
 
-
-
 // const data = {
 //     email: "email@gmail.com",
 //     password:"Hello@123"
@@ -21,7 +19,7 @@
 // const userInput2 = "Hello@123"
 
 // // //Nested if else statement/ condition
-// if(data.email == userInput){ //First the program checks if the user email is correct or not. 
+// if(data.email == userInput){ //First the program checks if the user email is correct or not.
 //  if(data.password ==userInput2){
 //     console.log("Access Granted")
 //  }
@@ -57,3 +55,5 @@
 // else{
 //     console.log("Invalid Email")
 // }
+
+const age = 17;

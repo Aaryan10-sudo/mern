@@ -1,10 +1,16 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
+import { MONGODB_URL } from "./env.js";
 
-export const connectDB = async() => {
-    try {
-        const result = await mongoose.connect("mongodb://localhost:27017/e-commerce")
-{result ? console.log("Mongo DB connected ") : ""}
-    } catch (error) {
-        console.log(error.message)
+export const connectDB = async () => {
+  try {
+    const result = await mongoose.connect(MONGODB_URL);
+    {
+      result
+        ? console.log("Mongo DB connected ")
+        : console.log("Database COnnection Error");
     }
-} 
+  } catch (error) {
+    console.log(error.message);
+    process.exit();
+  }
+};

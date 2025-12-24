@@ -1,7 +1,7 @@
 #JWT => Jsonwebtoken
 
 jwt banda cai hamlai 3ta kura caincha
--payload = data = infoObj
+-payload = data = infoObj - id , name , email
 -SECRET_KEY  = secret
 -expiry_time = {expiresIn}
 
