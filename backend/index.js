@@ -1,7 +1,7 @@
 import express from "express";
 import { connectDB } from "./config/connectMongo.js";
-import { productRouter } from "./routes/product.route.js";
 import { orderRouter } from "./routes/order.route.js";
+import { productRouter } from "./routes/product.route.js";
 import { userRouter } from "./routes/user.route.js";
 import { fileRouter } from "./routes/file.route.js";
 

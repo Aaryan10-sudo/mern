@@ -3,34 +3,32 @@ import { User } from "../schema/user.schema.js";
 // export const isAuthorized = async (req, res, next) => {
 //   try {
 //     const id = req.userId;
+//     const result = await User.findById(id);
 
-//     const user = await User.findById(id);
-
-//     console.log(user);
-
-//     if (user.role !== "admin") {
+//     if (result.role !== "admin") {
 //       res.status(403).json({
-//         message: "You are not authorized",
+//         message: "You are not authenticated",
 //       });
+//     } else {
+//       next();
 //     }
-
-//     next();
 //   } catch (error) {
-//     res.status(500).json({
+//     res.status(403).json({
 //       message: "Internal Server Error",
 //       error: error.message,
 //     });
 //   }
 // };
 
-// RBAC => Role Based Access Control
-export const isAuthorized = (role) => {
+//Role Based Access Control
+
+export const isAuthorized = (roles) => {
   return async (req, res, next) => {
     try {
       const id = req.userId;
-      const user = await User.findById(id);
+      const result = await User.findById(id);
 
-      if (!role.includes(user.role)) {
+      if (!roles.includes(result.role)) {
         res.status(403).json({
           message: "You are not authorized",
         });

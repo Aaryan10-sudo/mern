@@ -1,10 +1,9 @@
-export const uploadFileController = async (req, res) => {
+export const handleSingleFile = (req, res) => {
   try {
-    const file = req.file.filename;
-
+    const file = req.file;
     res.status(200).json({
-      message: "File Uploaded Successfully",
-      url: `http://localhost:8080/${file}`,
+      message: "File uploaded successfully",
+      link: `http://localhost:8080/${file.filename}`,
     });
   } catch (error) {
     res.status(500).json({

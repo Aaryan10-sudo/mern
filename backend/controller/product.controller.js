@@ -3,6 +3,7 @@ import { Product } from "../schema/product.schema.js";
 export const createProductController = async (req, res) => {
   try {
     let data = req.body;
+
     const result = await Product.create(data);
     res.status(201).json({
       message: "Product Created Successfully",
@@ -56,7 +57,7 @@ export const updateProductController = async (req, res) => {
     const result = await Product.findByIdAndUpdate(
       id,
       { quantity: quantity },
-      { new: true }
+      { new: true },
     );
     res.status(200).json({
       message: "Product Updated Successfully",
